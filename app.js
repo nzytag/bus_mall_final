@@ -19,7 +19,7 @@ if (localStorage.imagesVotes) {
 
 // We create a global array with 0's to tally the votes
 var imagesVotes = [];
-for (i = 0; i < images.length; i++) { // Check how we use images.lenght property
+for (i = 0; i < images.length; i++) { // Check how we use images.length property
   imagesVotes.push(0); // Add 1 zero per each image in images array
 }
 // Now images votes has only 0's
@@ -248,19 +248,19 @@ function displayChart() {
     }
   });
 }
-//this function is to make an array with the votes per images
-// function onLoadPage () {
-//   if (!localStorage.imagesVotes) return;
-//   var storedVotes = localStorage.imagesVotes.split(',');
-//   for ( var i = 0; i < storedVotes.length; i++ ) {
-//     storedVotes[i] = parseInt(storedVotes[i]);
-//   }
-//   imagesVotes = storedVotes;
-//   console.log('PREPOP', localStorage)
-// }
-// onLoadPage();
-//this will load the info when the page loads
-// window.addEventListener('onload', onLoadPage);
+// this function is to make an array with the votes per images
+function onLoadPage () {
+  if (!localStorage.imagesVotes) return;
+  var storedVotes = localStorage.imagesVotes.split(',');
+  for ( var i = 0; i < storedVotes.length; i++ ) {
+    storedVotes[i] = parseInt(storedVotes[i]);
+  }
+  imagesVotes = storedVotes;
+  console.log('PREPOP', localStorage);
+}
+onLoadPage();
+// this will load the info when the page loads
+window.addEventListener('onload', onLoadPage);
 
 // this function will save the imagesVotes to the local Storage
 function saveToPage () {
